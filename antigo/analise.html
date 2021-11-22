@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+
+<title>Web Crawling</title>
+
+<style type="text/css">
+
+.column {
+max-width: 600px;
+}
+
+</style>
+
+</head>
+
+<body class="m-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="">Cruzamento AE</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a href="/polls/" class="nav-link ">Inicio</a>
+</li>
+<!-- <li class="nav-item">-->
+<!-- <a href="/polls/beneficiarios/" class="nav-link ">Busca de dados</a>-->
+<!-- </li>-->
+<!-- <li class="nav-item">-->
+<!-- <a href="/polls/bolsa-familia/" class="nav-link ">Teste local</a>-->
+<!-- </li>-->
+
+<li class="nav-item">
+<a href="/polls/cruzamento/auxilios/" class="nav-link ">Cruzamento de dados</a>
+</li>
+
+<li class="nav-item">
+<a href="/polls/analise/" class="nav-link active">Análises</a>
+</li>
+
+<!-- <li class="nav-item dropdown">-->
+<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"-->
+<!-- role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!-- Cruzamento de dados-->
+<!-- </a>-->
+<!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!-- <li><a class="dropdown-item" href="/polls/cruzamento/auxilios/">Auxílios (BF x AE)</a></li>-->
+<!-- <li><a class="dropdown-item" href="">Prefeituras x AE</a></li>-->
+<!-- </ul>-->
+<!-- </li>-->
+
+</ul>
+</div>
+<!-- <ul class="navbar-nav">-->
+<!-- <li class="nav-item">-->
+<!-- <a href="" class="nav-link">Sair</a>-->
+<!-- </li>-->
+<!-- </ul>-->
+</nav>
+
+<!-- <div class="ui divider"></div>-->
+
+<div class="d-flex justify-content-center justify-content-lg-between border-bottom mt-5">
+<div class="container" id="login">
+<div class="row justify-content-center mb-5">
+<div class='w-50'>
+
+<h1 class="ui header">
+</h1>
+
+
+<form method="POST" class="form-signin" action="/polls/analise/">
+<input type="hidden" name="csrfmiddlewaretoken" value="R0J5iatQRU1n9WMNDbCU8D8D0oIlDsy6ZfE4RHz4aQRutcJKn4VGyP68m2XXQH8M">
+
+<div class="form-group mb-3">
+<label for="tipoGrafico">Tipo Gráfico:</label>
+<select class="form-select" name="tipoGrafico" id="tipoGrafico" onchange="regraGraficos(this)" required>
+<option value="valor" >Mês vs Valor</option>
+<option value="total" >Cidades vs Total</option>
+</select>
+</div>
+
+<div class="form-group mb-3" id="divMunicipio">
+<label for="municipio">Município:</label>
+<select class="form-select" name="municipio" id="municipio" required>
+<option value="SANTA_CRUZ_DA_BAIXA_VERDE" >Santa Cruz da Baixa Verde</option>
+<option value="SERRA_TALHADA" >Serra Talhada</option>
+<option value="TRIUNFO" >Triunfo</option>
+<option value="CALUMBI" > Calumbi</option>
+<option value="FLORESTA" >Floresta</option>
+<option value="MIRANDIBA" >Mirandiba</option>
+<option value="SAO_JOSE_DO_BELMONTE" >São José do Belmonte</option>
+</select>
+</div>
+
+<div class="form-group mb-3" id="divPeriodo" style="display: flex;">
+<label for="de" class="p-2">De:</label>
+<input type="month" class="form-control" id="de" name="de" value="" placeholder="De">
+<label for="ate" class="p-2">Até:</label>
+<input type="month" class="form-control" id="ate" name="ate" value="" placeholder="Até">
+</div>
+
+<button type="submit" id="buscar" class="btn btn-primary">Procurar</button>
+</form>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" id="tabelaDados">-->
+<!-- </div>-->
+<script src="/static/polls/analise.js"></script>
+
+
+<footer class="text-center p-4 mt-5">
+<span class="footer-copy">© 2021 . Todos os direitos reservados. </span>
+</footer>
+
+</body>
+
+</html>
