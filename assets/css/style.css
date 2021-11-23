@@ -42,6 +42,7 @@ label {
     color: white;
     font-weight: 300;
     position: relative;
+    filter: brightness(50%);
 }
 
     #head.secondary {
