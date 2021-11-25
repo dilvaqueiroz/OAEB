@@ -70,6 +70,10 @@ label {
     #head .btn {
         margin-bottom: 10px;
     }
+    .btn {
+        margin-bottom: 10px;
+        background: none;
+    }
 
     #head .btn-default {
         text-shadow: none;
