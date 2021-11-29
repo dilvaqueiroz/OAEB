@@ -36,13 +36,14 @@ label {
 /* Header */
 #head {
     background: #181015 url( ../images/bg_header.jpg) no-repeat;
+    background: #181015;
     background-size: cover;
     min-height: 520px;
     text-align: center;
     color: white;
     font-weight: 300;
     position: relative;
-    filter: brightness(50%);
+    /* filter: brightness(50%); */
 }
 
     #head.secondary {
