@@ -68,21 +68,34 @@
         </div>
         <!-- /.navbar -->
 
-        <header id="head" class="secondary" style="margin-bottom: 50px;"></header>
+        <header id="head" class="secondary"></header>
 
          <!-- /container -->
 
-         <div class="max-100 max-vh-100 d-flex align-items-center">
+         <div class="max-100 max-vh-100 d-flex">
             <!-- container -->
-            <div class="container" style="margin-top: 30px;">
-                <div class="row justify-content-center align-self-center">
+            <div class="container">
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 my-auto">
+                        <!-- main content -->
+                       <section class="maincontent">
+                           <header class="page-header">
+                               <h1 class="page-title">Analise de dados</h1>
+                           </header>
+                           <h3>Texto observatorio</h3>
+                           <p>
+                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
+                           <p>Consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>              
+                       </section>
+                   
+                       <!-- /main -->
+                   </div>
                     <div class="col col-md-6 col-xl-5 my-auto">
                         <div class="p-5 border-shadow">
                             <form method="POST" class="form-signin" action="/polls/analise/">
                                 <input for="inputdefault" type="hidden" name="csrfmiddlewaretoken" value="R0J5iatQRU1n9WMNDbCU8D8D0oIlDsy6ZfE4RHz4aQRutcJKn4VGyP68m2XXQH8M">  
                                 <div class="form-group mb-3">
                                     <div class="row">
-                                        <div class="col col-md-12 d-flex">
+                                        <div class="col col-md-12 d-flex" style="margin-top: 30px;">
                                             <div class="col-md-6">
                                                 <label for="tipoGrafico"  class="form-label">Tipo Gráfico:</label>
                                                 <select for="inputdefault" class="form-control" name="tipoGrafico" id="tipoGrafico" onchange="regraGraficos(this)" required>
@@ -128,7 +141,6 @@
                             </form>
                         </div>
                     </div>
-                </div>
             </div>
             <!-- /container -->
         </div>
