@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OAEB - Observatório do Auxílio Emergencial do Brasil.">
+    <meta name="author" content="">
+
+ 
+    <link rel="favicon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script> -->
+    <title>OAEB - Observatório do Auxílio Emergencial do Brasil</title>
+</head>
+
+<body>
+    <div class="d-flex flex-column">
+
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Button for smallest screens -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../assets/images/logo.png" alt="OAEB HTML5 template"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="pages/cruzamento.html">Cruzamento de dados</a></li>
+                        <li class="active"><a href="analise.html">Análises</a></li>
+                        <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="sidebar-right.html">Right Sidebar</a></li>
+                                <li><a href="#">Dummy Link1</a></li>
+                                <li><a href="#">Dummy Link2</a></li>
+                                <li><a href="#">Dummy Link3</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="pages/contact.html">Contato</a></li>
+    
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <!-- /.navbar -->
+
+        <header id="head" class="secondary" style="margin-bottom: 50px;"></header>
+
+         <!-- /container -->
+
+         <div class="max-100 max-vh-100 d-flex align-items-center">
+            <!-- container -->
+            <div class="container" style="margin-top: 30px;">
+                <div class="row justify-content-center align-self-center">
+                    <div class="col col-md-6 col-xl-5 my-auto">
+                        <div class="p-5 border-shadow">
+                            <form method="POST" class="form-signin" action="/polls/analise/">
+                                <input for="inputdefault" type="hidden" name="csrfmiddlewaretoken" value="R0J5iatQRU1n9WMNDbCU8D8D0oIlDsy6ZfE4RHz4aQRutcJKn4VGyP68m2XXQH8M">  
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col col-md-12 d-flex">
+                                            <div class="col-md-6">
+                                                <label for="tipoGrafico"  class="form-label">Tipo Gráfico:</label>
+                                                <select for="inputdefault" class="form-control" name="tipoGrafico" id="tipoGrafico" onchange="regraGraficos(this)" required>
+                                                    <option value="valor" >Mês vs Valor</option>
+                                                    <option value="total" >Cidades vs Total</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="municipio" class="form-label">Município:</label>
+                                                <select for="inputdefault" class="form-control" name="municipio" id="municipio" required>
+                                                    <option value="SANTA_CRUZ_DA_BAIXA_VERDE" >Santa Cruz da Baixa Verde</option>
+                                                    <option value="SERRA_TALHADA" >Serra Talhada</option>
+                                                    <option value="TRIUNFO" >Triunfo</option>
+                                                    <option value="CALUMBI" > Calumbi</option>
+                                                    <option value="FLORESTA" >Floresta</option>
+                                                    <option value="MIRANDIBA" >Mirandiba</option>
+                                                    <option value="SAO_JOSE_DO_BELMONTE" >São José do Belmonte</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group mb-3" id="divPeriodo">
+                                    <div class="row">
+                                        <div class="col col-md-12 d-flex justify-content-lg-between">
+                                            <div class="col-md-6">
+                                                <label for="de" class="form-label">De:</label>
+                                                <input for="inputdefault" type="month" class="form-control" id="de" name="de" value="" placeholder="De">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="ate" class="form-label">Até:</label>
+                                                <input for="inputdefault" type="month" class="form-control" id="ate" name="ate" value="" placeholder="Até">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div style="display: flex; justify-content:  center; margin-top: 30px;">
+                                    <button type="submit" id="buscar" class="btn btn-primary">Procurar</button>
+                                </div>
+                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+
+    </div>
+    <footer id="footer" class="top-space">
+
+        <div class="footer1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 panel">
+                        <h3 class="panel-title">Sobre OAEB</h3>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Aenean leo lectus sollicitudin convallis eget libero. Aliquam laoreet tellus ut libero semper, egestas velit malesuada. Sed non risus eget dolor amet vestibulum ullamcorper. Integer feugiat molestie.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 panel contact">
+                        <h3 class="panel-title">Informações</h4>
+                        <div class="panel-body">
+                            <p>Endereço Profissional:</p>
+                            <ul>
+                                <!-- <li><i class="fa fa-phone"></i>(88) 98116-9372</li> -->
+                                <li><i class="fa fa-flag"></i>Unidade Acadêmica de Serra Talhada - UFRPE
+                                    Av. Gregório Ferraz Nogueira, S/N - José Tomé de Souza Ramos - CEP: 56909-535 - Serra Talhada/PE
+                                    Caixa Postal: 063</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 panel">
+                        <h3 class="panel-title">Canais de Comunicação</h3>
+                        <div class="panel-body">
+                            <p class="follow-me-icons">
+                                <a href="https://www.instagram.com/mael_santos7/"><i class="fa fa-instagram fa-2"></i></a>
+                                <a href="https://www.linkedin.com/in/abimael-jonas-738328124/"><i class="fa fa-linkedin-square fa-2"></i></a>
+                                <a href="https://github.com/MaelSantos"><i class="fa fa-github fa-2"></i></a>
+                                <a href="https://www.facebook.com/people/Mael-Santos/100014350898752/"><i class="fa fa-facebook fa-2"></i></a>
+                                <a href="mailto:maelsantos777@gmail.com"><i class="fa fa-envelope-o"></i></a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /row of panels -->
+            </div>
+        </div>
+
+        <div class="footer2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="simplenav">
+                                <a href="index.html">Início</a> | 
+                                <a href="cruzamento.html">Cruzamento de dados</a> |
+                                <a href="analise.html">Análises</a> |
+                                <a href="contact.html">Contato</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="text-right">
+                                Copyright &copy; 2021. Desenvolvido por <a href="" rel="develop">Abimael Jonas</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /row of panels -->
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <!-- <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" id="tabelaDados">-->
+    <!-- </div>-->
+    <script src="/static/polls/analise.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
