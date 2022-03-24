@@ -18,4 +18,4 @@ $ git clone https://github.com/DilvaQueiroz/OAEB.git && cd OAEB
 
 ### 💻 Projeto
 [OAEB] (https://dilvaqueiroz.github.io/OAEB/)
-Este é um projeto desenvolvido durante um projeto de concusão de curso de sistemas de informação da UFRPE, apresentado por **(https://github.com/MaelSantos) ** durante 17 de dezembro de 2021.💜
+Este é um projeto desenvolvido durante um projeto de concusão de curso de sistemas de informação da UFRPE, apresentado por **(https://github.com/MaelSantos) ** em 17 de dezembro de 2021.💜
