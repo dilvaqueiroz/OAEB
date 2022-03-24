@@ -3,8 +3,8 @@ Esse é um projeto apenas Front-End (Projeto gráfico)  de uma aplicação chama
 
 ### Tecnologias 
   - [JavaScript](https://devdocs.io/javascript/)
-  - [HTML](https://reactjs.org/)
-  - [CSS](https://nextjs.org/)
+  - [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+  - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
 ## 🔥 Preview
 ![image](https://user-images.githubusercontent.com/48795370/159979711-7d00fe32-5b3f-44a8-8d83-5587e9af550b.png)
