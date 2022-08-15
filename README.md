@@ -13,7 +13,7 @@ Esse é um projeto apenas Front-End (Projeto gráfico)  de uma aplicação chama
 
 Clone o projeto e acesse a pasta
 ```sh
-$ git clone https://github.com/DilvaQueiroz/OAEB.git && cd OAEB
+$ git clone https://github.com/dilvaqueiroz/OAEB.git && cd OAEB
 ```
 
 ### 💻 Projeto
